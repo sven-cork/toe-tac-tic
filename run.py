@@ -7,6 +7,17 @@ game_board = ["-","-","-",
 print(game_board)
 
 
+#global variables:
+#game_board
+#player?
+
+#functions:
+#select_player
+#select slot on board and update board
+#winner
+#computer turn
+#winner
+
 
 def select_player():
 
@@ -15,11 +26,13 @@ def select_player():
     """
 
     player = ""
+
     while True: 
         player = input("Player select team 'X' or 'O': ").upper()
         if player == "X" or player == "O":
             break
     print(player)
+    return player
     
 
 
