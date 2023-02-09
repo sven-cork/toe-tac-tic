@@ -50,11 +50,28 @@ def user_input(game_board):
 
 def check_winner(game_board):
     #check horizontal win condition
-    if horizontal_win = game_board[0,0] == game_board[0,1] == game_board[0,2] and game_board[0,0] != "-"
+    if game_board[0][0] == game_board[0][1] == game_board[0][2] and game_board[0,0] != "-":
+        return game_board[0][0]
     elif:
         game_board[1,0] == game_board[1,1] == game_board[1,2] and game_board[1,0] != "-"
+        return game_board[1,0]
     elif:  
         game_board[2,0] == game_board[2,1] == game_board[2,2] and game_board[2,0] != "-"  
+        return game_board[2,0]
+
+    #check vertical win condition
+    if game_board[0][0] == game_board[1][0] == game_board[2][0] and game_board[0,0] != "-":
+        return game_board[0][0]
+    elif game_board[0,1] == game_board[1,1] == game_board[2,1] and game_board[0,1] != "-":
+        return game_board[1,0]
+    elif game_board[2,0] == game_board[2,1] == game_board[2,2] and game_board[2,0] != "-":  
+        return game_board[2,0]
+
+    #check diagnoal win condition
+    if game_board[0][0] == game_board[1][1] == game_board[2][2] and game_board[0,0] != "-":
+        return game_board[0][0]
+    elif game_board[0,2] == game_board[1,1] == game_board[2,0] and game_board[0,2] != "-":
+        return game_board[0,2]
 
 
 select_player()
