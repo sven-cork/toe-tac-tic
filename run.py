@@ -1,8 +1,6 @@
-
-
-game_board = [["-","-","-"],
-              ["-","-","-"],
-              ["-","-","-"]]
+game_board = [1, 2, 3,
+              4, 5, 6,
+              7, 8, 9]
 
 print(game_board)
 
@@ -50,28 +48,28 @@ def user_input(game_board):
 
 def check_winner(game_board):
     #check horizontal win condition
-    if game_board[0][0] == game_board[0][1] == game_board[0][2] and game_board[0,0] != "-":
-        return game_board[0][0]
-    elif:
-        game_board[1,0] == game_board[1,1] == game_board[1,2] and game_board[1,0] != "-"
-        return game_board[1,0]
-    elif:  
-        game_board[2,0] == game_board[2,1] == game_board[2,2] and game_board[2,0] != "-"  
-        return game_board[2,0]
+    if game_board[0] == game_board[1] == game_board[2] and game_board[0] != "-":
+        return game_board[0]
+    elif game_board[3] == game_board[4] == game_board[5] and game_board[3] != "-":
+        return game_board[2]
+    elif game_board[6] == game_board[7] == game_board[8] and game_board[6] != "-":  
+        return game_board[6]
 
     #check vertical win condition
-    if game_board[0][0] == game_board[1][0] == game_board[2][0] and game_board[0,0] != "-":
-        return game_board[0][0]
-    elif game_board[0,1] == game_board[1,1] == game_board[2,1] and game_board[0,1] != "-":
-        return game_board[1,0]
-    elif game_board[2,0] == game_board[2,1] == game_board[2,2] and game_board[2,0] != "-":  
-        return game_board[2,0]
+    if game_board[0] == game_board[2] == game_board[6] and game_board[0] != "-":
+        return game_board[0]
+    elif game_board[1] == game_board[3] == game_board[6] and game_board[1] != "-":
+        return game_board[1]
+    elif game_board[2] == game_board[5] == game_board[8] and game_board[2] != "-":  
+        return game_board[2]
 
     #check diagnoal win condition
-    if game_board[0][0] == game_board[1][1] == game_board[2][2] and game_board[0,0] != "-":
-        return game_board[0][0]
-    elif game_board[0,2] == game_board[1,1] == game_board[2,0] and game_board[0,2] != "-":
-        return game_board[0,2]
+    if game_board[0] == game_board[4] == game_board[7] and game_board[0] != "-":
+        return game_board[0]
+    elif game_board[2] == game_board[4] == game_board[6] and game_board[2] != "-":
+        return game_board[2]
 
 
 select_player()
+user_input(game_board)
+check_winner(game_board)
