@@ -68,7 +68,7 @@ def user_input(game_board):
     """
 
     user_input = int(input("Select a free slot (number 1-9) on the game board to achive three in a row: "))
-    if user_input >= 1 and user_input <= 9 and (game_board[user_input] != "X" or game_board[user_input] != "O"):
+    if user_input >= 1 and user_input <= 9 and (game_board[user_input - 1] != "X" or game_board[user_input - 1] != "O"):
         game_board[user_input - 1] = player
     else:
         print("Try again")
@@ -78,30 +78,40 @@ def user_input(game_board):
 def check_winner(game_board):
     #check horizontal win condition
     if game_board[0] == game_board[1] == game_board[2] and game_board[0] != "-":
-        print(game_board[0])
+        print(f"{game_board[0]} is the winner!!")
+        run_game = False
     elif game_board[3] == game_board[4] == game_board[5] and game_board[3] != "-":
-        print(game_board[2])
+        print(f"{game_board[3]} is the winner!!")
+        run_game = False
     elif game_board[6] == game_board[7] == game_board[8] and game_board[6] != "-":  
-        print(game_board[6])
+        print(f"{game_board[6]} is the winner!!")
+        run_game = False
 
     #check vertical win condition
     if game_board[0] == game_board[2] == game_board[6] and game_board[0] != "-":
-        prit(game_board[0])
+        print(f"{game_board[0]} is the winner!!")
+        run_game = False
     elif game_board[1] == game_board[3] == game_board[6] and game_board[1] != "-":
-        print(game_board[1])
+        print(f"{game_board[1]} is the winner!!")
+        run_game = False
     elif game_board[2] == game_board[5] == game_board[8] and game_board[2] != "-":  
-        print(game_board[2])
+        print(f"{game_board[2]} is the winner!!")
+        run_game = False
 
     #check diagnoal win condition
-    if game_board[0] == game_board[4] == game_board[7] and game_board[0] != "-":
-        print(game_board[0])
+    if game_board[0] == game_board[4] == game_board[8] and game_board[0] != "-":
+        print(f"{game_board[0]} is the winner!!")
+        run_game = False
     elif game_board[2] == game_board[4] == game_board[6] and game_board[2] != "-":
-        print(game_board[2])
+        print(f"{game_board[2]} is the winner!!")
+        run_game = False
+        
 
 #Computer turn based on random generated number applied to non occupied game board slot
 def computer_turn():
     while True:
         random_number = random.randint(1,9)
+        print("Random number: ", random_number)
         if game_board[random_number - 1] != "X" and game_board[random_number - 1] != "O":
             game_board[random_number - 1] = computer
             print("computer selected: ", random_number)
@@ -112,15 +122,17 @@ def computer_turn():
 
 
 def main():
+    run_game = True
+    while run_game:
     #select_player()
-    display_board(game_board)
-    user_input(game_board)
-    print("Player is: ", player)
-    print("Computer is:", computer)
-    display_board(game_board)
-    check_winner(game_board)
-    computer_turn()
-    check_winner(game_board)
+        display_board(game_board)
+        user_input(game_board)
+        print("Player is: ", player)
+        print("Computer is:", computer)
+        display_board(game_board)
+        check_winner(game_board)
+        computer_turn()
+        check_winner(game_board)
 
 
 main()
