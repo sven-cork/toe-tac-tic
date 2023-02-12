@@ -4,22 +4,19 @@ game_board = ["-", "-", "-",
               "-", "-", "-",
               "-", "-", "-"]
               
-              
-
 print(game_board)
 
 player = ""
 while True: 
-        player = input("Player select team 'X' or 'O': ").upper()
-        if player == "X" or player == "O":
-            break
+    player = input("Player select team 'X' or 'O': ").upper()
+    if player == "X" or player == "O":
+        break
 
 computer = ""
 if player == "X":
     computer = "O"
 else:
     computer = "X"
-
 
 #global variables:
 #game_board
@@ -38,8 +35,9 @@ else:
     def select_player():
 
     
-    #Let player select team "X" or "O". Checks if either of the valid teams (characters) have been selected and corrects for lower case entered character."
-    
+    #Let player select team "X" or "O". Checks if either
+    of the valid teams (characters) have been selected
+    and corrects for lower case entered character."
 
     player = ""
 
@@ -53,11 +51,14 @@ else:
 
 def display_board(game_board):
     print("+---+---+---+")
-    print("| " + game_board[0] + " | " + game_board[1] + " | " + game_board[2] + " | ")
+    print("| " + game_board[0] + " | " + game_board[1] + \
+    " | " + game_board[2] + " | ")
     print("+---+---+---+")
-    print("| " + game_board[3] + " | " + game_board[4] + " | " + game_board[5] + " | ")
+    print("| " + game_board[3] + " | " + game_board[4] + \
+    " | " + game_board[5] + " | ")
     print("+---+---+---+")
-    print("| " + game_board[6] + " | " + game_board[7] + " | " + game_board[8] + " | ")
+    print("| " + game_board[6] + " | " + game_board[7] + \
+    " | " + game_board[8] + " | ")
     print("+---+---+---+")
 
 #select slot on board and update board
@@ -77,7 +78,8 @@ def user_input(game_board):
 
 def check_winner(game_board):
     #check horizontal win condition
-    if game_board[0] == game_board[1] == game_board[2] and game_board[0] != "-":
+    if game_board[0] == game_board[1] == game_board[2]\
+    and game_board[0] != "-":
         print(f"{game_board[0]} is the winner!!")
         run_game = False
     elif game_board[3] == game_board[4] == game_board[5] and game_board[3] != "-":
@@ -88,21 +90,26 @@ def check_winner(game_board):
         run_game = False
 
     #check vertical win condition
-    if game_board[0] == game_board[2] == game_board[6] and game_board[0] != "-":
+    if game_board[0] == game_board[2] == game_board[6] \
+    and game_board[0] != "-":
         print(f"{game_board[0]} is the winner!!")
         run_game = False
-    elif game_board[1] == game_board[3] == game_board[6] and game_board[1] != "-":
+    elif game_board[1] == game_board[3] == game_board[6] \
+    and game_board[1] != "-":
         print(f"{game_board[1]} is the winner!!")
         run_game = False
-    elif game_board[2] == game_board[5] == game_board[8] and game_board[2] != "-":  
+    elif game_board[2] == game_board[5] == game_board[8] \
+    and game_board[2] != "-":  
         print(f"{game_board[2]} is the winner!!")
         run_game = False
 
     #check diagnoal win condition
-    if game_board[0] == game_board[4] == game_board[8] and game_board[0] != "-":
+    if game_board[0] == game_board[4] == game_board[8] \
+    and game_board[0] != "-":
         print(f"{game_board[0]} is the winner!!")
         run_game = False
-    elif game_board[2] == game_board[4] == game_board[6] and game_board[2] != "-":
+    elif game_board[2] == game_board[4] == game_board[6] \
+    and game_board[2] != "-":
         print(f"{game_board[2]} is the winner!!")
         run_game = False
         
@@ -112,14 +119,12 @@ def computer_turn():
     while True:
         random_number = random.randint(1,9)
         print("Random number: ", random_number)
-        if game_board[random_number - 1] != "X" and game_board[random_number - 1] != "O":
+        if game_board[random_number - 1] != "X" \
+        and game_board[random_number - 1] != "O":
             game_board[random_number - 1] = computer
             print("computer selected: ", random_number)
             display_board(game_board)
             break
-            
-            
-
 
 def main():
     run_game = True
@@ -133,6 +138,5 @@ def main():
         check_winner(game_board)
         computer_turn()
         check_winner(game_board)
-
 
 main()
