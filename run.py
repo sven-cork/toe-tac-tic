@@ -102,11 +102,12 @@ def check_winner(game_board):
 def computer_turn():
     while True:
         random_number = random.randint(1,9)
-        if game_board[random_number - 1] != "X" or game_board[random_number - 1] != "O":
+        if game_board[random_number - 1] != "X" and game_board[random_number - 1] != "O":
             game_board[random_number - 1] = computer
+            print("computer selected: ", random_number)
+            display_board(game_board)
             break
-        else:
-            continue
+            
             
 
 
@@ -114,6 +115,8 @@ def main():
     #select_player()
     display_board(game_board)
     user_input(game_board)
+    print("Player is: ", player)
+    print("Computer is:", computer)
     display_board(game_board)
     check_winner(game_board)
     computer_turn()
