@@ -1,3 +1,5 @@
+import random
+
 game_board = ["-", "-", "-",
               "-", "-", "-",
               "-", "-", "-"]
@@ -11,6 +13,12 @@ while True:
         player = input("Player select team 'X' or 'O': ").upper()
         if player == "X" or player == "O":
             break
+
+computer = ""
+if player == "X":
+    computer = "O"
+else:
+    computer = "X"
 
 
 #global variables:
@@ -90,10 +98,26 @@ def check_winner(game_board):
     elif game_board[2] == game_board[4] == game_board[6] and game_board[2] != "-":
         print(game_board[2])
 
+#Computer turn based on random generated number applied to non occupied game board slot
+def computer_turn():
+    while True:
+        random_number = random.randint(1,9)
+        if game_board[random_number - 1] != "X" or game_board[random_number - 1] != "O":
+            game_board[random_number - 1] = computer
+            break
+        else:
+            continue
+            
 
-#select_player()
-display_board(game_board)
-user_input(game_board)
-display_board(game_board)
-check_winner(game_board)
-print("Computer turn")
+
+def main():
+    #select_player()
+    display_board(game_board)
+    user_input(game_board)
+    display_board(game_board)
+    check_winner(game_board)
+    computer_turn()
+    check_winner(game_board)
+
+
+main()
