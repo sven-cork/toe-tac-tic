@@ -1,10 +1,15 @@
 import random
+from termcolor import colored
+
+print("""
+Beat the computer in classic Tic-Tac-Toe.
+
+Choose side and score three in a row for a win.
+""")
 
 game_board = ["-", "-", "-",
               "-", "-", "-",
               "-", "-", "-"]
-              
-print(game_board)
 
 player = ""
 while True: 
@@ -50,16 +55,16 @@ else:
 """
 
 def display_board(game_board):
-    print("+---+---+---+")
-    print("| " + game_board[0] + " | " + game_board[1] + \
-    " | " + game_board[2] + " | ")
-    print("+---+---+---+")
-    print("| " + game_board[3] + " | " + game_board[4] + \
-    " | " + game_board[5] + " | ")
-    print("+---+---+---+")
-    print("| " + game_board[6] + " | " + game_board[7] + \
-    " | " + game_board[8] + " | ")
-    print("+---+---+---+")
+    print(colored("+---+---+---+", "red"))
+    print(colored("| ", 'red') + game_board[0] + colored(" | ", "red") + game_board[1] + \
+    colored(" | ", "red") + game_board[2] + colored(" | ", "red"))
+    print(colored("+---+---+---+", "red"))
+    print(colored("| ", 'red') + game_board[3] + colored(" | ", "red") + game_board[4] + \
+    colored(" | ", "red") + game_board[5] + colored(" | ", "red"))
+    print(colored("+---+---+---+", "red"))
+    print(colored("| ", 'red') + game_board[6] + colored(" | ", "red") + game_board[7] + \
+    colored(" | ", "red") + game_board[8] + colored(" | ", "red"))
+    print(colored("+---+---+---+", "red"))
 
 #select slot on board and update board
 def user_input(game_board):
