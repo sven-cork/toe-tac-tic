@@ -86,39 +86,45 @@ def check_winner(game_board):
     if game_board[0] == game_board[1] == game_board[2]\
     and game_board[0] != "-":
         print(f"{game_board[0]} is the winner!!")
-        run_game = False
+        #run_game = False
+        play_again()
     elif game_board[3] == game_board[4] == game_board[5] and game_board[3] != "-":
         print(f"{game_board[3]} is the winner!!")
-        run_game = False
+        #run_game = False
+        play_again()
     elif game_board[6] == game_board[7] == game_board[8] and game_board[6] != "-":  
         print(f"{game_board[6]} is the winner!!")
-        run_game = False
-
+        #run_game = False
+        play_again()
     #check vertical win condition
-    if game_board[0] == game_board[2] == game_board[6] \
+    if game_board[0] == game_board[3] == game_board[6] \
     and game_board[0] != "-":
         print(f"{game_board[0]} is the winner!!")
-        run_game = False
-    elif game_board[1] == game_board[3] == game_board[6] \
+        #run_game = False
+        play_again()
+    elif game_board[1] == game_board[4] == game_board[7] \
     and game_board[1] != "-":
         print(f"{game_board[1]} is the winner!!")
-        run_game = False
+        #run_game = False
+        play_again()
     elif game_board[2] == game_board[5] == game_board[8] \
     and game_board[2] != "-":  
         print(f"{game_board[2]} is the winner!!")
-        run_game = False
+        #run_game = False
+        play_again()
 
     #check diagnoal win condition
     if game_board[0] == game_board[4] == game_board[8] \
     and game_board[0] != "-":
         print(f"{game_board[0]} is the winner!!")
-        run_game = False
+        #run_game = False
+        play_again()
     elif game_board[2] == game_board[4] == game_board[6] \
     and game_board[2] != "-":
         print(f"{game_board[2]} is the winner!!")
-        run_game = False
+        #run_game = False
+        play_again()
         
-
 #Computer turn based on random generated number applied to non occupied game board slot
 def computer_turn():
     while True:
@@ -130,6 +136,29 @@ def computer_turn():
             print("computer selected: ", random_number)
             display_board(game_board)
             break
+
+def play_again():
+
+    play_again_selection = ""
+
+    while True:
+        play_again_selection = input("Would you like to continue, yes or no (y/n): ").upper()
+        if play_again_selection == "Y" or play_again_selection == "N":
+            break
+        else:
+            print("Enter valid string 'y' or 'n'")
+    
+    if play_again_selection == "Y":
+        global game_board
+        game_board = ["-", "-", "-",
+                      "-", "-", "-",
+                      "-", "-", "-"]
+    
+    else:
+        quit()
+
+    
+    
 
 def main():
     run_game = True
