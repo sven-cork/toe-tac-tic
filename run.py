@@ -77,7 +77,7 @@ def user_input(game_board):
     """
 
     user_input = int(input("Select a slot (1-9) on the game board: "))
-    if user_input >= 1 and user_input <= 9 and (game_board[user_input - 1] != "X" \
+    if user_input >= 1 and user_input <= 9 and (game_board[user_input - 1] != "X"
         or game_board[user_input - 1] != "O"):
         game_board[user_input - 1] = player
     else:
@@ -91,12 +91,14 @@ def update_score(winner_character):
     global player_score
     global computer_score
 
+    print(f"Updating score for: {winner_character}")
+    print(f"Player score: {player_score}")
+    print(f"Computer score: {computer_score}")
+
     if winner_character == player:
         player_score += 1
     else:
         computer_score += 1
-
-
 
 def check_winner(game_board):
     """Checks winner if three of the same characters (X or O) have been 
@@ -214,6 +216,8 @@ def main():
         shark()
         display_board(game_board)
         user_input(game_board)
+        print(f"Player character is: {player}")
+        print(f"Computer character is: {computer}")
         print("Player is: ", player)
         print("Computer is:", computer)
         display_board(game_board)
