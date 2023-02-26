@@ -92,13 +92,14 @@ def update_score(winner_character):
     global computer_score
 
     print(f"Updating score for: {winner_character}")
-    print(f"Player score: {player_score}")
-    print(f"Computer score: {computer_score}")
 
     if winner_character == player:
         player_score += 1
     else:
         computer_score += 1
+
+    print(f"Player score: {player_score}")
+    print(f"Computer score: {computer_score}")
 
 def check_winner(game_board):
     """Checks winner if three of the same characters (X or O) have been 
