@@ -9,7 +9,7 @@ This is project module 3 of Code Institute Full Stack Developer course, focusing
 
 - [Features](#features)
   - [Logo with Start Screen](#logo-with-start-screen)
-  - [Crossword Area](#crossword-area)
+  - [Gameboard](#gameboard-area)
   - [Clues Area](#clues-area)
   - [Corrected Words Area](#clues-area)
   - [Footer](#footer)
@@ -17,7 +17,7 @@ This is project module 3 of Code Institute Full Stack Developer course, focusing
 
 - [Design](#design)
 - [Game Logic](#game-logic)
-  - [Flowchart image](#flowchart)
+  - [Flowchart](#flowchart)
 - [Technologies Utilised](#technologies-utilised)
 - [Testing](#testing)
 - [Validation](#validation)
@@ -37,11 +37,11 @@ This is project module 3 of Code Institute Full Stack Developer course, focusing
 
   ![Screenshot of Le Crossword heading](/assets/images/crossword_heading.png) 
 
-- ### Crossword Area
-  - This section allows the user to enter letters in the tiles to solve word clues horizontal and vertical.
-  - Comprising 25 tiles of which 21 can receive keyboard input for the user guessed letter.
-  - The submit button will allow the user to view words guessed correct or incorrect displayed in the section below crossword area.
-  - Using the reset button the user can reset the crossword back to empty tiles and remove all correct or incorrect words and color marks.
+- ### Gameboard area
+  - 9 slots, initially empty.
+  - Each empty slot represented by dash character.
+  - Per turn player or computer chooses to place their character in an empty slot.
+  - Three characters in a row results in a win.
 
 
   ![Screenshot of Crossword Area](/assets/images/crossword_area.png) 

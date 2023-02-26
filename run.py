@@ -56,7 +56,7 @@ else:
     print(player)
     return player
 """
-
+# 
 def display_board(game_board):
     print(colored("+---+---+---+", "red"))
     print(colored("| ", 'red') + game_board[0] + colored(" | ", "red") + game_board[1] + \
@@ -69,7 +69,7 @@ def display_board(game_board):
     colored(" | ", "red") + game_board[8] + colored(" | ", "red"))
     print(colored("+---+---+---+", "red"))
 
-#select slot on board and update board
+# Select slot on board and update board
 def user_input(game_board):
     """
     User selects slot to place X or O. Checks if slot already taken and if so 
@@ -83,63 +83,65 @@ def user_input(game_board):
     else:
         print("Try again")
 
-#winner?
-
 def update_score(winner_character):
+    """Keeps track of wins for player or computer until game is quit"""
+
     global player
     global computer
     global player_score
     global computer_score
 
-    print(f"Updating score for: {winner_character}")
+    new_line = "\n"
 
     if winner_character == player:
         player_score += 1
     else:
         computer_score += 1
 
-    print(f"Player score: {player_score}")
+    print(f"{new_line}Player score: {player_score}")
     print(f"Computer score: {computer_score}")
 
 def check_winner(game_board):
     """Checks winner if three of the same characters (X or O) have been 
     selected either horizontaly, vertically or diagonaly"""
 
+    new_line = '\n'
+
     #check horizontal win condition
     if game_board[0] == game_board[1] == game_board[2]\
     and game_board[0] != "-":
-        print(f"{game_board[0]} is the winner!!")
+        print(f"{new_line}{game_board[0]} is the winner!!")
         update_score(game_board[0])
         
         #run_game = False
         play_again()
     elif game_board[3] == game_board[4] == game_board[5] and game_board[3] != "-":
-        print(f"{game_board[3]} is the winner!!")
+        print(f"{new_line}{game_board[3]} is the winner!!")
         update_score(game_board[3])
 
         #run_game = False
         play_again()
     elif game_board[6] == game_board[7] == game_board[8] and game_board[6] != "-":  
-        print(f"{game_board[6]} is the winner!!")
+        print(f"{new_line}{game_board[6]} is the winner!!")
         update_score(game_board[6])
         #run_game = False
         play_again()
     #check vertical win condition
     if game_board[0] == game_board[3] == game_board[6] \
     and game_board[0] != "-":
-        print(f"{game_board[0]} is the winner!!")
+        print(f"{new_line}{game_board[0]} is the winner!!")
         update_score(game_board[0])
         #run_game = False
         play_again()
     elif game_board[1] == game_board[4] == game_board[7] \
     and game_board[1] != "-":
-        print(f"{game_board[1]} is the winner!!")
+        print(f"{new_line}{game_board[1]} is the winner!!")
         update_score(game_board[1])
         #run_game = False
         play_again()
     elif game_board[2] == game_board[5] == game_board[8] \
     and game_board[2] != "-":  
-        print(f"{game_board[2]} is the winner!!")
+        print(f"{new_line}{game_board[2]} is the winner!!")
         update_score(game_board[2])
         #run_game = False
         play_again()
@@ -147,13 +149,13 @@ def check_winner(game_board):
     #check diagnoal win condition
     if game_board[0] == game_board[4] == game_board[8] \
     and game_board[0] != "-":
-        print(f"{game_board[0]} is the winner!!")
+        print(f"{new_line}{game_board[0]} is the winner!!")
         update_score(game_board[0])
         #run_game = False
         play_again()
     elif game_board[2] == game_board[4] == game_board[6] \
     and game_board[2] != "-":
-        print(f"{game_board[2]} is the winner!!")
+        print(f"{new_line}{game_board[2]} is the winner!!")
         update_score(game_board[2])
         #run_game = False
         play_again()
@@ -175,7 +177,8 @@ def play_again():
     play_again_selection = ""
 
     while True:
-        play_again_selection = input("Would you like to continue, yes or no (y/n): ").upper()
+        play_again_selection = input("\nWould you like to \
+continue, yes or no (y/n): ").upper()
         if play_again_selection == "Y" or play_again_selection == "N":
             break
         else:
@@ -186,11 +189,11 @@ def play_again():
         game_board = ["-", "-", "-",
                       "-", "-", "-",
                       "-", "-", "-"]
-        print("Player score: ", player, "\nComputer score:", computer_score)
+        print("\n", "Player score: ", player, "\nComputer score:", computer_score)
         main()
     
     else:
-        print("Player score: ", player, "\nComputer score:", computer_score)
+        print("\n", "Player score: ", player, "\nComputer score:", computer_score)
         quit()
 
     
