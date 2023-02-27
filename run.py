@@ -75,7 +75,7 @@ def user_input(game_board):
     User selects slot to place X or O. Checks if slot already taken and if so 
     prompts user to select a new slow.
     """
-
+    print("\n")
     user_input = int(input("Select a slot (1-9) on the game board: "))
     if user_input >= 1 and user_input <= 9 and (game_board[user_input - 1] != "X"
         or game_board[user_input - 1] != "O"):

@@ -10,8 +10,8 @@ This is project module 3 of Code Institute Full Stack Developer course, focusing
 - [Features](#features)
   - [Logo with Start Screen](#logo-with-start-screen)
   - [Gameboard](#gameboard-area)
-  - [Clues Area](#clues-area)
-  - [Corrected Words Area](#clues-area)
+  - [Results](#results)
+  - [Play again](#play-again)
   - [Footer](#footer)
   - [Future Ideas](#future-ideas)
 
@@ -37,26 +37,25 @@ This is project module 3 of Code Institute Full Stack Developer course, focusing
 
   ![Screenshot of Le Crossword heading](/assets/images/crossword_heading.png) 
 
-- ### Gameboard area
+- ### Gameboard
   - 9 slots, initially empty.
   - Each empty slot represented by dash character.
-  - Per turn player or computer chooses to place their character in an empty slot.
+  - Each turn the player and computer chooses to place their character in an empty slot.
   - Three characters in a row results in a win.
 
+  ![Screenshot of results area](/assets/images/default_gameboard.png) 
 
-  ![Screenshot of Crossword Area](/assets/images/crossword_area.png) 
+- ### Results
+  - Upon scoring three characters in a row the winner character is displayed.
+  - Game score is displayed below with the total score for player and computer
+  from starting the first game
 
-- ### Clues Area
-  - Clues provided for the user comprising five horizontal and five vertical words.
-  - Green check marks or red "X" marks displayed next to each clue after pressing submit.
-
-  ![Screenshot of Clues Area](/assets/images/clues_area.png)
+  ![Screenshot of results area](/assets/images/results.png) 
  
-- ### Corrected Words Area
-  - After submitting the crossword the correct or incorrect guessed word appears in the corrected words area. The left side of the table lists
-  the correct guessed words in green color. The incorrect words are located on the right side in red color.
+- ### Play again
+  - Upon scoring a win the player is presented with an option to continue the game (y/n).
 
-  ![Screenshot of Corrected Words Area](/assets/images/corrected_words_area.png)
+  ![Screenshot of option to continue game](/assets/images/continue_game.png)
 
 - ### Footer
   - The footer contains social media links for Facebook, Twitter and Instagram.
