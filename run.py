@@ -101,47 +101,58 @@ def update_score(winner_character):
     print(f"{new_line}Player score: {player_score}")
     print(f"Computer score: {computer_score}")
 
+def check_character_to_winner(slot_character):
+    """checks if winner is player or computer and return a string either 'player'
+    or 'computer"""
+
+    if slot_character == player:
+        return "player"
+    else:
+        return "computer"
+
 def check_winner(game_board):
     """Checks winner if three of the same characters (X or O) have been 
     selected either horizontaly, vertically or diagonaly"""
 
     new_line = '\n'
 
+    
+
     #check horizontal win condition
     if game_board[0] == game_board[1] == game_board[2]\
     and game_board[0] != "-":
-        print(f"{new_line}{game_board[0]} is the winner!!")
+        print(f"{new_line}{game_board[0]} ({check_character_to_winner(game_board[0])}) is the winner!!")
         update_score(game_board[0])
         
         #run_game = False
         play_again()
     elif game_board[3] == game_board[4] == game_board[5] and game_board[3] != "-":
-        print(f"{new_line}{game_board[3]} is the winner!!")
+        print(f"{new_line}{game_board[3]} ({check_character_to_winner(game_board[3])}) is the winner!!")
         update_score(game_board[3])
 
         #run_game = False
         play_again()
     elif game_board[6] == game_board[7] == game_board[8] and game_board[6] != "-":  
-        print(f"{new_line}{game_board[6]} is the winner!!")
+        print(f"{new_line}{game_board[6]} ({check_character_to_winner(game_board[6])}) is the winner!!")
         update_score(game_board[6])
         #run_game = False
         play_again()
     #check vertical win condition
     if game_board[0] == game_board[3] == game_board[6] \
     and game_board[0] != "-":
-        print(f"{new_line}{game_board[0]} is the winner!!")
+        print(f"{new_line}{game_board[0]} ({check_character_to_winner(game_board[0])}) is the winner!!")
         update_score(game_board[0])
         #run_game = False
         play_again()
     elif game_board[1] == game_board[4] == game_board[7] \
     and game_board[1] != "-":
-        print(f"{new_line}{game_board[1]} is the winner!!")
+        print(f"{new_line}{game_board[1]} ({check_character_to_winner(game_board[1])}) is the winner!!")
         update_score(game_board[1])
         #run_game = False
         play_again()
     elif game_board[2] == game_board[5] == game_board[8] \
     and game_board[2] != "-":  
-        print(f"{new_line}{game_board[2]} is the winner!!")
+        print(f"{new_line}{game_board[2]} ({check_character_to_winner(game_board[2])}) is the winner!!")
         update_score(game_board[2])
         #run_game = False
         play_again()
@@ -149,13 +160,13 @@ def check_winner(game_board):
     #check diagnoal win condition
     if game_board[0] == game_board[4] == game_board[8] \
     and game_board[0] != "-":
-        print(f"{new_line}{game_board[0]} is the winner!!")
+        print(f"{new_line}{game_board[0]} ({check_character_to_winner(game_board[0])}) is the winner!!")
         update_score(game_board[0])
         #run_game = False
         play_again()
     elif game_board[2] == game_board[4] == game_board[6] \
     and game_board[2] != "-":
-        print(f"{new_line}{game_board[2]} is the winner!!")
+        print(f"{new_line}{game_board[2]} ({check_character_to_winner(game_board[2])}) is the winner!!")
         update_score(game_board[2])
         #run_game = False
         play_again()
@@ -164,7 +175,6 @@ def check_winner(game_board):
 def computer_turn():
     while True:
         random_number = random.randint(1,9)
-        print("Random number: ", random_number)
         if game_board[random_number - 1] != "X" \
         and game_board[random_number - 1] != "O":
             game_board[random_number - 1] = computer
@@ -220,10 +230,10 @@ def main():
         shark()
         display_board(game_board)
         user_input(game_board)
-        print(f"Player character is: {player}")
-        print(f"Computer character is: {computer}")
-        print("Player is: ", player)
-        print("Computer is:", computer)
+        #print(f"Player character is: {player}")
+        #print(f"Computer character is: {computer}")
+        #print("Player is: ", player)
+        #print("Computer is:", computer)
         display_board(game_board)
         check_winner(game_board)
         computer_turn()
