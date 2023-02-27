@@ -12,7 +12,6 @@ This is project module 3 of Code Institute Full Stack Developer course, focusing
   - [Gameboard](#gameboard-area)
   - [Results](#results)
   - [Play again](#play-again)
-  - [Footer](#footer)
   - [Future Ideas](#future-ideas)
 
 - [Design](#design)
@@ -21,11 +20,7 @@ This is project module 3 of Code Institute Full Stack Developer course, focusing
 - [Technologies Utilised](#technologies-utilised)
 - [Testing](#testing)
 - [Validation](#validation)
-  - [HTML Validation](#html-validation)
-  - [CSS Validation](#css-validation)
-- [Performance/Accessibility](#performanceaccessibility)
-  - [Lighthouse Desktop version test outcome](#lighthouse-desktop-version-test-outcome)
-  - [Lighthouse Mobile version test outcome](#lighthouse-mobile-version-test-outcome)
+  - PEP8
 - [Deployment](#deployment)
   - [Forking](#forking)
 - [Credits](#credits)

@@ -16,7 +16,7 @@ game_board = ["-", "-", "-",
 
 player = ""
 while True: 
-    player = input("Player select team 'X' or 'O': ").upper()
+    player = input("Player select team 'X' or 'O': \n").upper()
     if player == "X" or player == "O":
         break
 
@@ -50,7 +50,7 @@ else:
     player = ""
 
     while True: 
-        player = input("Player select team 'X' or 'O': ").upper()
+        player = input("Player select team 'X' or 'O': \n").upper()
         if player == "X" or player == "O":
             break
     print(player)
@@ -75,13 +75,19 @@ def user_input(game_board):
     User selects slot to place X or O. Checks if slot already taken and if so 
     prompts user to select a new slow.
     """
-    print("\n")
-    user_input = int(input("Select a slot (1-9) on the game board: "))
-    if user_input >= 1 and user_input <= 9 and (game_board[user_input - 1] != "X"
-        or game_board[user_input - 1] != "O"):
-        game_board[user_input - 1] = player
-    else:
-        print("Try again")
+
+    global player
+    
+    while True:
+    
+        print("\n")
+        user_input = int(input("Select a slot (1-9) on the game board: \n"))
+        if (user_input >= 1 and user_input <= 9 and (game_board[user_input - 1] != "X")) or (user_input >= 1 and user_input <= 9 and game_board[user_input - 1] != "O"):
+            game_board[user_input - 1] = player
+            print("User input entered on board")
+            break
+        else:
+            print("Try again")
 
 def update_score(winner_character):
     """Keeps track of wins for player or computer until game is quit"""
@@ -188,7 +194,7 @@ def play_again():
 
     while True:
         play_again_selection = input("\nWould you like to \
-continue, yes or no (y/n): ").upper()
+continue, yes or no (y/n): \n").upper()
         if play_again_selection == "Y" or play_again_selection == "N":
             break
         else:
