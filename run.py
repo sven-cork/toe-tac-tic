@@ -82,12 +82,13 @@ def user_input(game_board):
     
         print("\n")
         user_input = int(input("Select a slot (1-9) on the game board: \n"))
-        if (user_input >= 1 and user_input <= 9 and (game_board[user_input - 1] != "X")) or (user_input >= 1 and user_input <= 9 and game_board[user_input - 1] != "O"):
+        if (user_input >= 1 and user_input <= 9 and (game_board[user_input - 1] == "-")): #or (user_input >= 1 and user_input <= 9 and game_board[user_input - 1] != "O"):
             game_board[user_input - 1] = player
             print("User input entered on board")
             break
         else:
-            print("Try again")
+            display_board(game_board)
+            print("\nSlot already taken, try again")
 
 def update_score(winner_character):
     """Keeps track of wins for player or computer until game is quit"""
