@@ -88,7 +88,7 @@ def user_input(game_board):
             break
         else:
             display_board(game_board)
-            print("\nSlot already taken, try again")
+            print("\nSlot already taken, try again!")
 
 def update_score(winner_character):
     """Keeps track of wins for player or computer until game is quit"""
@@ -123,11 +123,10 @@ def check_winner(game_board):
 
     new_line = '\n'
 
-    
+    draw = False
 
     #check horizontal win condition
-    if game_board[0] == game_board[1] == game_board[2]\
-    and game_board[0] != "-":
+    if game_board[0] == game_board[1] == game_board[2] and game_board[0] != "-":
         print(f"{new_line}{game_board[0]} ({check_character_to_winner(game_board[0])}) is the winner!!")
         update_score(game_board[0])
         
@@ -145,39 +144,38 @@ def check_winner(game_board):
         #run_game = False
         play_again()
     #check vertical win condition
-    if game_board[0] == game_board[3] == game_board[6] \
-    and game_board[0] != "-":
+    elif game_board[0] == game_board[3] == game_board[6] and game_board[0] != "-":
         print(f"{new_line}{game_board[0]} ({check_character_to_winner(game_board[0])}) is the winner!!")
         update_score(game_board[0])
         #run_game = False
         play_again()
-    elif game_board[1] == game_board[4] == game_board[7] \
-    and game_board[1] != "-":
+    elif game_board[1] == game_board[4] == game_board[7] and game_board[1] != "-":
         print(f"{new_line}{game_board[1]} ({check_character_to_winner(game_board[1])}) is the winner!!")
         update_score(game_board[1])
         #run_game = False
         play_again()
-    elif game_board[2] == game_board[5] == game_board[8] \
-    and game_board[2] != "-":  
+    elif game_board[2] == game_board[5] == game_board[8] and game_board[2] != "-":  
         print(f"{new_line}{game_board[2]} ({check_character_to_winner(game_board[2])}) is the winner!!")
         update_score(game_board[2])
         #run_game = False
         play_again()
 
     #check diagnoal win condition
-    if game_board[0] == game_board[4] == game_board[8] \
-    and game_board[0] != "-":
+    elif game_board[0] == game_board[4] == game_board[8] and game_board[0] != "-":
         print(f"{new_line}{game_board[0]} ({check_character_to_winner(game_board[0])}) is the winner!!")
         update_score(game_board[0])
         #run_game = False
         play_again()
-    elif game_board[2] == game_board[4] == game_board[6] \
-    and game_board[2] != "-":
+    elif game_board[2] == game_board[4] == game_board[6] and game_board[2] != "-":
         print(f"{new_line}{game_board[2]} ({check_character_to_winner(game_board[2])}) is the winner!!")
         update_score(game_board[2])
         #run_game = False
         play_again()
-        
+            
+    if game_board.count("-") == 0:
+        print("This round was a draw, no winner")
+        play_again()
+
 #Computer turn based on random generated number applied to non occupied game board slot
 def computer_turn():
     while True:
@@ -191,6 +189,8 @@ def computer_turn():
 
 def play_again():
 
+    global game_board
+
     play_again_selection = ""
 
     while True:
@@ -202,7 +202,7 @@ continue, yes or no (y/n): \n").upper()
             print("Enter valid string 'y' or 'n'")
     
     if play_again_selection == "Y":
-        global game_board
+        
         game_board = ["-", "-", "-",
                       "-", "-", "-",
                       "-", "-", "-"]
