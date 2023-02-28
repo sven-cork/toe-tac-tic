@@ -16,9 +16,11 @@ game_board = ["-", "-", "-",
 
 player = ""
 while True: 
-    player = input("Player select team 'X' or 'O': \n").upper()
+    player = input("\nPlayer select team 'X' or 'O': \n").upper()
     if player == "X" or player == "O":
         break
+    else:
+        print("\nIncorrect option, select either 'X' or 'O'.")
 
 computer = ""
 if player == "X":
@@ -84,11 +86,10 @@ def user_input(game_board):
         user_input = int(input("Select a slot (1-9) on the game board: \n"))
         if (user_input >= 1 and user_input <= 9 and (game_board[user_input - 1] == "-")): #or (user_input >= 1 and user_input <= 9 and game_board[user_input - 1] != "O"):
             game_board[user_input - 1] = player
-            print("User input entered on board")
             break
         else:
             display_board(game_board)
-            print("\nSlot already taken, try again!")
+            print("\nSlot already taken or invalid number, try again!")
 
 def update_score(winner_character):
     """Keeps track of wins for player or computer until game is quit"""
@@ -122,8 +123,6 @@ def check_winner(game_board):
     selected either horizontaly, vertically or diagonaly"""
 
     new_line = '\n'
-
-    draw = False
 
     #check horizontal win condition
     if game_board[0] == game_board[1] == game_board[2] and game_board[0] != "-":
