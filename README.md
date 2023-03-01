@@ -69,7 +69,7 @@ This is project module 3 of Code Institute Full Stack Developer course, focusing
 
 ## Game Logic
   - ### Flowchart
-  ![Flowchart image](/assets/images/footer.png)
+  ![Flowchart image](/assets/images/flowchart.png)
 
 
 ## Technologies Utilised
@@ -81,19 +81,16 @@ This is project module 3 of Code Institute Full Stack Developer course, focusing
 
 ## Testing
 
-Manual testing was performed using with the following devices: 
- - iMac 27" 2017, macOS 12.6 (Monterey)
- - iPad Air (3rd Generation), iPadOS 15.554
- - iPhone 12, iOS 15.3.1
+Manual testing was carried out for character input and win conditions:
 
  |    Feature Tested        |      Expected Result                     |        Actual Result       |        Pass/Fail           |  
  |:-------------------------|:---------------------------------------- |:---------------------------|:---------------------------|                               
- | All words entered correct in crossword|Green check marks displayed for all clues| All clues display green check marks.    |        Pass                |
-  | All words entered correct in crossword|All correct words displayed in green color| All correct words returned in green color.   |        Pass                |
-  | All words entered incorrect in crossword|All correct words displayed in red color| Some words across do not display red "X". Last minute change to JavaScript stopped this from working. Will be corrected in future update.   |        Fail                |
-  | All words entered incorrect in crossword|Red "x" marks displayed for all clues| All clues display red "x" marks.   |        Pass                |
-  | Reset button clear all tiles and colored words and clues|All tiles and color markings cleared.   |    All information cleared.       |       Pass              |
-  | Lower case letter entered for all tiles evaluated as uppercase letter.  |    Lower case letter entered evaluates as uppercase letter.      |       Works as expected.              |     Pass
+ | Character input to select team|Only "X" or "O" accepted characters| Any other character entered other than "X" or "O" prompts to re-enter character    |        Pass                |
+  | Character input to select team corrects for lower case letter entered|Lower case letter "x" or "o" are accepted| Lower case letter "x" or "o" are accepted  |        Pass                |
+  | Slot number entered occupied or beyond range 1-9 | Only empty slots (-) and within range 1-9 are selectable | Non-empty slot or out of range selection (1-9) prompts to re-select slot   |        Pass                |
+  | Player horizontal win (3 possible horizontal rows for win) | Any same character occupying any of the 3 horizontal rows results in win| Works as expected  |        Pass                |
+  | Player vertical win (3 possible vertical columns for win)| Any same character occupying any of the 3 vertical columns results in win |    Works as expected |       Pass              |
+  | Player diagonal win (2 possible diagonals for win) |  Any same character occupying any of the 2 diagonals results in win   |       Works as expected.              |     Pass
   
 --------------------------------------------------------------------------------------
 
