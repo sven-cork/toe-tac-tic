@@ -27,38 +27,7 @@ if player == "X":
     computer = "O"
 else:
     computer = "X"
-
-#global variables:
-#game_board
-#player?
-
-#functions:
-#display board
-#select_player
-#select slot on board and update board
-#winner
-#computer turn
-#winner
-
-#select_player
-"""
-    def select_player():
-
-    
-    #Let player select team "X" or "O". Checks if either
-    of the valid teams (characters) have been selected
-    and corrects for lower case entered character."
-
-    player = ""
-
-    while True: 
-        player = input("Player select team 'X' or 'O': \n").upper()
-        if player == "X" or player == "O":
-            break
-    print(player)
-    return player
-"""
-# 
+ 
 def display_board(game_board):
     print(colored("+---+---+---+", "red"))
     print(colored("| ", 'red') + game_board[0] + colored(" | ", "red") + game_board[1] + \
@@ -84,7 +53,8 @@ def user_input(game_board):
     
         print("\n")
         user_input = int(input("Select a slot (1-9) on the game board: \n"))
-        if (user_input >= 1 and user_input <= 9 and (game_board[user_input - 1] == "-")): #or (user_input >= 1 and user_input <= 9 and game_board[user_input - 1] != "O"):
+        if (user_input >= 1 and user_input <= 9 and\
+        (game_board[user_input - 1] == "-")):
             game_board[user_input - 1] = player
             break
         else:
@@ -125,8 +95,10 @@ def check_winner(game_board):
     new_line = '\n'
 
     #check horizontal win condition
-    if game_board[0] == game_board[1] == game_board[2] and game_board[0] != "-":
-        print(f"{new_line}{game_board[0]} ({check_character_to_winner(game_board[0])}) is the winner!!")
+    if game_board[0] == game_board[1] == game_board[2] and\
+    game_board[0] != "-":
+        print(f"{new_line}{game_board[0]}\
+        ({check_character_to_winner(game_board[0])}) is the winner!!")
         update_score(game_board[0])
         
         #run_game = False
@@ -212,34 +184,12 @@ continue, yes or no (y/n): \n").upper()
         print("\n", "Player score: ", player, "\nComputer score:", computer_score)
         quit()
 
-    
-def shark():
-    shark = """
-                                 ^`.                     o
-     ^_              \  \                  o  o
-     \ \             {   \                 o
-     {  \           /     `~~~--__
-     {   \___----~~'              `~~-_     ______          _____
-      \                         /// a  `~._(_||___)________/___
-      / /~~~~-, ,__.    ,      ///  __,,,,)      o  ______/    
-      \/      \/    `~~~;   ,---~~-_`~= \ \------o-'            
-                       /   /            / /
-                      '._.'           _/_/
-                                      ';|
-                                        """
-    print(shark)
-
 def main():
     run_game = True
     while run_game:
     #select_player()
-        shark()
         display_board(game_board)
         user_input(game_board)
-        #print(f"Player character is: {player}")
-        #print(f"Computer character is: {computer}")
-        #print("Player is: ", player)
-        #print("Computer is:", computer)
         display_board(game_board)
         check_winner(game_board)
         computer_turn()

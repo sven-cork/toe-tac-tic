@@ -82,11 +82,11 @@ This is project module 3 of Code Institute Full Stack Developer course, focusing
 
   ### Development Environment, Version Control and Deployment/Storage
 
-  - [Gitpod:](https://gitpod.io/workspaces) was used for writing the game code and push to GitHub for hosting
-  - GitHub
-  - Heroku
-  - Lucidchart
-  - PEP8
+  - [Gitpod:](https://gitpod.io/workspaces) - was used for writing the game code and deploy to GitHub
+  - [GitHub:](https://github.com/) - was used for hosting the program source code and supporting files
+  - [Heroku:](https://github.com/) - was used for deployment and visualising the program in a web based Terminal app
+  - [Lucidchart:](https://www.lucidchart.com/) - was used for creating the flowchart
+  - [Pep8:](https://pep8ci.herokuapp.com/) - was used to test the program python code for errors or fomatting issues
 
 ## Testing
 
