@@ -17,7 +17,7 @@ This is project module 3 of Code Institute Full Stack Developer course, focusing
 - [Design](#design)
 - [Game Logic](#game-logic)
   - [Flowchart](#flowchart)
-- [Technologies Utilised](#technologies-utilised)
+- [Technologies Used](#technologies-utilised)
 - [Testing](#testing)
 - [Validation](#validation)
   - PEP8
@@ -72,12 +72,21 @@ This is project module 3 of Code Institute Full Stack Developer course, focusing
   ![Flowchart image](/assets/images/flowchart.png)
 
 
-## Technologies Utilised
+## Technologies Used
+  ### Languages
+  - Toe Tac Tic was written in Python.
 
-- [Fontawesome](https://fontawesome.com/) was used for green check marks, red "x" marks and social media icons in the Footer.
-- Preview.app for macOS was used to re-size images used with Love Art.
-- [GitPod](https://gitpod.io/) was used to code HTML, CSS and.
+  ### Packages
+  - [Termcolor:](https://pypi.org/project/termcolor/) was used to color the gameboard.
+  - [Random:](https://docs.python.org/3/library/random.html) was used to generate random number for computer.
 
+  ### Development Environment, Version Control and Deployment/Storage
+
+  - [Gitpod:](https://gitpod.io/workspaces) was used for writing the game code and push to GitHub for hosting
+  - GitHub
+  - Heroku
+  - Lucidchart
+  - PEP8
 
 ## Testing
 
@@ -85,37 +94,18 @@ Manual testing was carried out for character input and win conditions:
 
  |    Feature Tested        |      Expected Result                     |        Actual Result       |        Pass/Fail           |  
  |:-------------------------|:---------------------------------------- |:---------------------------|:---------------------------|                               
- | Character input to select team|Only "X" or "O" accepted characters| Any other character entered other than "X" or "O" prompts to re-enter character    |        Pass                |
-  | Character input to select team corrects for lower case letter entered|Lower case letter "x" or "o" are accepted| Lower case letter "x" or "o" are accepted  |        Pass                |
-  | Slot number entered occupied or beyond range 1-9 | Only empty slots (-) and within range 1-9 are selectable | Non-empty slot or out of range selection (1-9) prompts to re-select slot   |        Pass                |
-  | Player horizontal win (3 possible horizontal rows for win) | Any same character occupying any of the 3 horizontal rows results in win| Works as expected  |        Pass                |
-  | Player vertical win (3 possible vertical columns for win)| Any same character occupying any of the 3 vertical columns results in win |    Works as expected |       Pass              |
-  | Player diagonal win (2 possible diagonals for win) |  Any same character occupying any of the 2 diagonals results in win   |       Works as expected.              |     Pass
+ | Character input to select team|Only "X" or "O" accepted characters.| Any other character entered other than "X" or "O" prompts to re-enter character.    |        Pass                |
+  | Character input to select team corrects for lower case letter entered.| Lower case letter "x" or "o" are accepted. | Lower case letter "x" or "o" are accepted.  |        Pass                |
+  | Slot number entered occupied or beyond range 1-9. | Only empty slots (-) and within range 1-9 are selectable. | Non-empty slot or out of range selection (1-9) prompts to re-select slot.   |        Pass                |
+  | Player horizontal win (3 possible horizontal rows for win). | Any same character occupying any of the 3 horizontal rows results in win. | Works as expected.  |        Pass                |
+  | Player vertical win (3 possible vertical columns for win). | Any same character occupying any of the 3 vertical columns results in win. |    Works as expected. |       Pass              |
+  | Player diagonal win (2 possible diagonals for win). |  Any same character occupying any of the 2 diagonals results in win.   |       Works as expected.              |     Pass |
+  | Draw condition where all slots are occupied however where none of the win conditions were triggered. |   Draw condition triggered presenting a draw message and offered to play again.   |       Works as expected.              |     Pass |
   
---------------------------------------------------------------------------------------
 
-Testing Le Crossword for different devices using Google Developer tools
 
-|    Device        |      Result                     |
-|:-----------------|:--------------------------------|
-|  iPhone 12 Pro   |      Works as expected          |
-|  iPhone SE       |      Works as expected          |
-|  Samsung Galaxy A51/71       |      Works as expected          |
-|  iPad Air     |      Works as expected, however crossword area could be made larger|
-|  Surface Pro 7    |      Works as expected, however in portrait mode the content is pushed on the top of the display|
-|  Next Hub   |      Works as expected|
 
---------------------------------------------------------------------------------------
 
-Browser Testing
-
-|    Browser (version)       |      Result                     |
-|:-----------------|:--------------------------------|
-|  Google Chrome (108.0.5359.124)  |      Works as expected          |
-|  Safari (15.6.1)       |      Works as expected          |
-|  Firefox (107.0.1)       |      Works as expected          |
-
---------------------------------------------------------------------------------------
 
 
 ## Validation
