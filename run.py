@@ -55,7 +55,6 @@ def user_input(game_board):
     """
 
     global player
-    
     while True:
         print("\n")
         try:
@@ -112,84 +111,82 @@ def check_winner(game_board):
     """
 
     new_line = '\n'
+    winner_message = colored("is the winner!!", "yellow")
 
     # check horizontal win condition
-    if game_board[0] == game_board[1] == game_board[2] and\
-       game_board[0] != "-":
+    if (game_board[0] == game_board[1] == game_board[2] and
+            game_board[0] != "-"):
         winner = check_character_to_winner(game_board[0])
-        winner_message = colored("is the winner!!", "yellow")
-        print()
         print(f"{new_line}{game_board[0]} {winner}", winner_message)
         update_score(game_board[0])
-        
-        #run_game = False
         play_again()
-    elif game_board[3] == game_board[4] == game_board[5] and\
-    game_board[3] != "-":
-        print(f"{new_line}{game_board[3]} \
-({check_character_to_winner(game_board[3])})", colored("is the winner!!", "yellow"))
+    elif (game_board[3] == game_board[4] == game_board[5] and
+            game_board[3] != "-"):
+        winner = check_character_to_winner(game_board[3])
+        print(f"{new_line}{game_board[3]} {winner}", winner_message)
         update_score(game_board[3])
-
-        #run_game = False
         play_again()
-    elif game_board[6] == game_board[7] == game_board[8] and\
-    game_board[6] != "-":  
-        print(f"{new_line}{game_board[6]} \
-({check_character_to_winner(game_board[6])})", colored("is the winner!!", "yellow"))
+
+    elif (game_board[6] == game_board[7] == game_board[8] and
+            game_board[6] != "-"):
+        winner = check_character_to_winner(game_board[6])
+        print(f"{new_line}{game_board[6]} {winner}", winner_message)
         update_score(game_board[6])
-        #run_game = False
-        play_again()
-    #check vertical win condition
-    elif game_board[0] == game_board[3] == game_board[6] and \
-    game_board[0] != "-":
-        print(f"{new_line}{game_board[0]} \
-({check_character_to_winner(game_board[0])})", colored("is the winner!!", "yellow"))
-        update_score(game_board[0])
-        #run_game = False
-        play_again()
-    elif game_board[1] == game_board[4] == game_board[7] and \
-    game_board[1] != "-":
-        print(f"{new_line}{game_board[1]} \
-({check_character_to_winner(game_board[1])})", colored("is the winner!!", "yellow"))
-        update_score(game_board[1])
-        #run_game = False
-        play_again()
-    elif game_board[2] == game_board[5] == game_board[8] and \
-    game_board[2] != "-":  
-        print(f"{new_line}{game_board[2]} \
-({check_character_to_winner(game_board[2])})", colored("is the winner!!", "yellow"))
-        update_score(game_board[2])
-        #run_game = False
         play_again()
 
-    #check diagnoal win condition
-    elif game_board[0] == game_board[4] == game_board[8] and \
-    game_board[0] != "-":
-        print(f"{new_line}{game_board[0]} \
-({check_character_to_winner(game_board[0])})", colored("is the winner!!", "yellow"))
+    # check vertical win condition
+    elif (game_board[0] == game_board[3] == game_board[6] and
+            game_board[0] != "-"):
+        winner = check_character_to_winner(game_board[0])
+        print(f"{new_line}{game_board[0]} {winner}", winner_message)
         update_score(game_board[0])
-        #run_game = False
         play_again()
-    elif game_board[2] == game_board[4] == game_board[6] and \
-    game_board[2] != "-":
-        print(f"{new_line}{game_board[2]} \
-({check_character_to_winner(game_board[2])})", colored("is the winner!!", "yellow"))
+
+    elif (game_board[1] == game_board[4] == game_board[7] and
+            game_board[1] != "-"):
+        winner = check_character_to_winner(game_board[1])
+        print(f"{new_line}{game_board[1]} {winner}", winner_message)
+        update_score(game_board[1])
+        play_again()
+
+    elif (game_board[2] == game_board[5] == game_board[8] and
+            game_board[2] != "-"):
+        winner = check_character_to_winner(game_board[2])
+        print(f"{new_line}{game_board[2]} {winner}", winner_message)
         update_score(game_board[2])
-        #run_game = False
         play_again()
-            
+
+    # check diagnoal win condition
+    elif (game_board[0] == game_board[4] == game_board[8] and
+            game_board[0] != "-"):
+        winner = check_character_to_winner(game_board[0])
+        print(f"{new_line}{game_board[0]} {winner}", winner_message)
+        update_score(game_board[0])
+        play_again()
+
+    elif (game_board[2] == game_board[4] == game_board[6] and
+            game_board[2] != "-"):
+        winner = check_character_to_winner(game_board[2])
+        print(f"{new_line}{game_board[2]} {winner}", winner_message)
+        update_score(game_board[2])
+        play_again()
+
     if game_board.count("-") == 0:
         print("\n")
         print("This round was a draw, no winner")
         play_again()
 
 
-#Computer turn based on random generated number applied to non occupied game board slot
 def computer_turn():
+    """
+    Computer turn based on random generated number
+    applied to non occupied gameboard slot
+    """
+
     while True:
-        random_number = random.randint(1,9)
-        if game_board[random_number - 1] != "X" \
-        and game_board[random_number - 1] != "O":
+        random_number = random.randint(1, 9)
+        if (game_board[random_number - 1] != "X"
+                and game_board[random_number - 1] != "O"):
             game_board[random_number - 1] = computer
             print("computer selected: ", random_number)
             display_board(game_board)
@@ -197,7 +194,10 @@ def computer_turn():
 
 
 def play_again():
-
+    """
+    Offer player to play again while correcting for lowercase
+    and invalid letters.
+    """
     global game_board
 
     play_again_selection = ""
@@ -209,30 +209,35 @@ continue, yes or no (y/n): \n").upper()
             break
         else:
             print("Enter valid string 'y' or 'n'")
-    
+
     if play_again_selection == "Y":
-        
+
         game_board = ["-", "-", "-",
                       "-", "-", "-",
                       "-", "-", "-"]
-        print("\n", "Player score: ", player, "\nComputer score:", computer_score)
+        print("\n", "Player score: ", player,
+              "\nComputer score:", computer_score)
         main()
-    
+
     else:
         print("\n")
-        print("Player score: ", player_score, "\nComputer score:", computer_score)
+        print("Player score: ", player_score,
+              "\nComputer score:", computer_score)
         quit()
 
 
 def main():
+    """
+    Game main function running all sub functions
+    """
     run_game = True
     while run_game:
-    #select_player()
         display_board(game_board)
         user_input(game_board)
         display_board(game_board)
         check_winner(game_board)
         computer_turn()
         check_winner(game_board)
+
 
 main()
