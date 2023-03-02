@@ -117,20 +117,20 @@ def check_winner(game_board):
     if (game_board[0] == game_board[1] == game_board[2] and
             game_board[0] != "-"):
         winner = check_character_to_winner(game_board[0])
-        print(f"{new_line}{game_board[0]} {winner}", winner_message)
+        print(f"{new_line}{game_board[0]} ({winner})", winner_message)
         update_score(game_board[0])
         play_again()
     elif (game_board[3] == game_board[4] == game_board[5] and
             game_board[3] != "-"):
         winner = check_character_to_winner(game_board[3])
-        print(f"{new_line}{game_board[3]} {winner}", winner_message)
+        print(f"{new_line}{game_board[3]} ({winner})", winner_message)
         update_score(game_board[3])
         play_again()
 
     elif (game_board[6] == game_board[7] == game_board[8] and
             game_board[6] != "-"):
         winner = check_character_to_winner(game_board[6])
-        print(f"{new_line}{game_board[6]} {winner}", winner_message)
+        print(f"{new_line}{game_board[6]} ({winner})", winner_message)
         update_score(game_board[6])
         play_again()
 
@@ -138,21 +138,21 @@ def check_winner(game_board):
     elif (game_board[0] == game_board[3] == game_board[6] and
             game_board[0] != "-"):
         winner = check_character_to_winner(game_board[0])
-        print(f"{new_line}{game_board[0]} {winner}", winner_message)
+        print(f"{new_line}{game_board[0]} ({winner})", winner_message)
         update_score(game_board[0])
         play_again()
 
     elif (game_board[1] == game_board[4] == game_board[7] and
             game_board[1] != "-"):
         winner = check_character_to_winner(game_board[1])
-        print(f"{new_line}{game_board[1]} {winner}", winner_message)
+        print(f"{new_line}{game_board[1]} ({winner})", winner_message)
         update_score(game_board[1])
         play_again()
 
     elif (game_board[2] == game_board[5] == game_board[8] and
             game_board[2] != "-"):
         winner = check_character_to_winner(game_board[2])
-        print(f"{new_line}{game_board[2]} {winner}", winner_message)
+        print(f"{new_line}{game_board[2]} ({winner})", winner_message)
         update_score(game_board[2])
         play_again()
 
@@ -160,14 +160,14 @@ def check_winner(game_board):
     elif (game_board[0] == game_board[4] == game_board[8] and
             game_board[0] != "-"):
         winner = check_character_to_winner(game_board[0])
-        print(f"{new_line}{game_board[0]} {winner}", winner_message)
+        print(f"{new_line}{game_board[0]} ({winner})", winner_message)
         update_score(game_board[0])
         play_again()
 
     elif (game_board[2] == game_board[4] == game_board[6] and
             game_board[2] != "-"):
         winner = check_character_to_winner(game_board[2])
-        print(f"{new_line}{game_board[2]} {winner}", winner_message)
+        print(f"{new_line}{game_board[2]} ({winner})", winner_message)
         update_score(game_board[2])
         play_again()
 

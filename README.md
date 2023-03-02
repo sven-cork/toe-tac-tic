@@ -7,16 +7,16 @@ This is project module 3 of Code Institute Full Stack Developer course, focusing
 
 ## Table of contents
 
-- [Features](#features)
-  - [Logo with Start Screen](#logo-with-start-screen)
-  - [Gameboard](#gameboard-area)
-  - [Results](#results)
-  - [Play again](#play-again)
-  - [Future Ideas](#future-ideas)
+- [UI/UX](#ui/ux)
+  - [Features](#features)
+    - [Logo with Start Screen](#logo-with-start-screen)
+    - [Gameboard](#gameboard)
+    - [Results](#results)
+    - [Play again](#play-again)
 
-- [Design](#design)
-- [Game Logic](#game-logic)
-  - [Flowchart](#flowchart)
+- [User stories](#user-stories)
+- [colorscheme](#colorscheme)
+- [Game Logic/Flowchart](#game-logic/flowchart)
 - [Technologies Used](#technologies-utilised)
 - [Testing](#testing)
 - [Validation](#validation)
@@ -25,40 +25,53 @@ This is project module 3 of Code Institute Full Stack Developer course, focusing
   - [Forking](#forking)
 - [Credits](#credits)
 
-## Features
+## UI/UX
 
-- ### Logo With Start Screen
-  - Upon starting the game the user is greeted with a game board picture and the start screen as below:
+- ### Features
+  - #### Logo With Start Screen
+    - Upon starting the game the user is greeted with a game board picture and the start screen as below:
 
-  ![Screenshot of Le Crossword heading](/assets/images/crossword_heading.png) 
+    ![Screenshot of Le Crossword heading](/assets/images/crossword_heading.png) 
 
-- ### Gameboard
-  - 9 slots, initially empty.
-  - Each empty slot represented by dash character.
-  - Each turn the player and computer chooses to place their character in an empty slot.
-  - Three characters in a row results in a win.
+  - #### Gameboard
+    - 9 slots, initially empty.
+    - Each empty slot represented by dash character.
+    - Each turn the player and computer chooses to place their character in an empty slot.
+    - Three characters in a row results in a win.
 
   ![Screenshot of results area](/assets/images/default_gameboard.png) 
 
-- ### Results
-  - Upon scoring three characters in a row the winner character is displayed.
-  - Game score is displayed below with the total score for player and computer
-  from starting the first game
+  - #### Results
+    - Upon scoring three characters in a row the winner character is displayed.
+    - Game score is displayed below with the total score for player and computer
+      from starting the first game
 
   ![Screenshot of results area](/assets/images/results.png) 
  
-- ### Play again
-  - Upon scoring a win the player is presented with an option to continue the game (y/n).
+  - #### Play again
+    - Upon scoring a win the player is presented with an option to continue the game (y/n).
 
   ![Screenshot of option to continue game](/assets/images/continue_game.png)
-        
-## Design
-  - Courier New was chosen for header font style as this I believe evokes a sense of classic old newspapper.
-  - The hero image has few colors and the wooden tiles provides a dominant earthy tone against which the crossword area is well balanced.
-  - Considering the crossword area is busy with 25 tiles, the rest of the website is kept minimalistic with mostly dark or white colors and I belive this achieves a nice harmony for the overall impression.
 
-## Game Logic
-  - ### Flowchart
+- ### User Stories
+  - I would like a new visitor to experience or achive:
+    - Start a new game quickly.
+    - Understand the game mechanism. 
+    - Keep track of the score.
+    - Get a thrill competing against the computer.
+    - Have the option to exit out of the game quickly.
+
+- ### Colorscheme
+    - Colorama was used to color winner message yellow.
+
+    ![Screenshot of winner message](/assets/images/winner_message.png)
+
+    - Alert message and gameboard is presented in red color.
+    
+    ![Screenshot of alert message](/assets/images/alert_message.png)
+
+
+- ### Game Logic/Flowchart
   ![Flowchart image](/assets/images/flowchart.png)
 
 ## Technologies Used
@@ -98,23 +111,6 @@ Manual testing was carried out for character input and win conditions:
 - [PEP8 CI](https://pep8ci.herokuapp.com/) was used to program syntax and formatting. All Python code passed as below:
 ![PEP8 CI result for Toe Tac Tic](/assets/images/pep8.png)
 
-<details>
-
-<summary>HTML validation for html.index/</summary>
-
-![W3 HTML Checker result for index.html](/assets/images/html_check.png)
-
-</details>
-
-### JavaScript Validation
-JavaScript validation was performed using [JSHint](https://jshint.com/) and the following results were returned:
- - No errors were found.
- - There are 7 functions in the script.js file.
- - The function with the largest signature takes 2 arguments, while the median is 0.
- - There are 92 statements in the largest function, while the median is 2.
- - The most complex function has a cyclomatic complexity value of 46, while the median is 1.
-
-
 ## Deployment
 
 ### Forking
@@ -130,9 +126,7 @@ JavaScript validation was performed using [JSHint](https://jshint.com/) and the 
 
 
 ### Code
-- JavaScript code for arrow function locating items by class borrowed from the website listed below. This code snippet added functionality to the reset button by locating all elements with a green check or red "X" mark in order for them to be removed:
-https://codingbeautydev.com/blog/javascript-remove-class-from-multiple-elements/
-- Code snippet from line 275 to 278 in scripts.js.
+- Inspiration for design of the gameboard was taken from [Code Coach](https://www.youtube.com/watch?v=dK6gJw4-NCo&list=PLzoTxk8WON8ZgLPBK9YYZlHoJzm0QUR8F&index=1&ab_channel=CodeCoach).
 
 
 ### Other
