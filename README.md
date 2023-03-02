@@ -20,7 +20,7 @@ This is project module 3 of Code Institute Full Stack Developer course, focusing
 - [Technologies Used](#technologies-utilised)
 - [Testing](#testing)
 - [Validation](#validation)
-  - PEP8
+  - [PEP8](#pep8)
 - [Deployment](#deployment)
   - [Forking](#forking)
 - [Credits](#credits)
@@ -94,8 +94,9 @@ Manual testing was carried out for character input and win conditions:
 
 ## Validation
 
-### HTML Validation
-- [W3 HTML Checker](https://validator.w3.org/nu/#textarea) was used to test HTML validation. The website passed as per below screenshot.
+### PEP8
+- [PEP8 CI](https://pep8ci.herokuapp.com/) was used to program syntax and formatting. All Python code passed as below:
+![PEP8 CI result for Toe Tac Tic](/assets/images/pep8.png)
 
 <details>
 
