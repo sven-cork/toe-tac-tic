@@ -50,16 +50,19 @@ def user_input(game_board):
     global player
     
     while True:
-    
+        
         print("\n")
-        user_input = int(input("Select a slot (1-9) on the game board: \n"))
-        if (user_input >= 1 and user_input <= 9 and\
-        (game_board[user_input - 1] == "-")):
-            game_board[user_input - 1] = player
-            break
-        else:
-            display_board(game_board)
-            print("\nSlot already taken or invalid number, try again!")
+        try:
+            user_input = int(input("Select a slot (1-9) on the game board: \n"))
+            if (user_input >= 1 and user_input <= 9 and\
+            (game_board[user_input - 1] == "-")):
+                game_board[user_input - 1] = player
+                break
+            else:
+                display_board(game_board)
+                print(colored("\nSlot already taken or invalid number, try again!", ))
+        except:
+            print(colored("Incorrect character entered, try again!", "red"))
 
 def update_score(winner_character):
     """Keeps track of wins for player or computer until game is quit"""
@@ -116,7 +119,7 @@ def check_winner(game_board):
         play_again()
     #check vertical win condition
     elif game_board[0] == game_board[3] == game_board[6] and game_board[0] != "-":
-        print(f"{new_line}{game_board[0]} ({check_character_to_winner(game_board[0])}) is the winner!!")
+        print(f"""{new_line}{game_board[0]} ({check_character_to_winner(game_board[0])}) is the winner!!""")
         update_score(game_board[0])
         #run_game = False
         play_again()

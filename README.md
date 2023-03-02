@@ -51,16 +51,6 @@ This is project module 3 of Code Institute Full Stack Developer course, focusing
   - Upon scoring a win the player is presented with an option to continue the game (y/n).
 
   ![Screenshot of option to continue game](/assets/images/continue_game.png)
-
-- ### Footer
-  - The footer contains social media links for Facebook, Twitter and Instagram.
-  - The links are stylised icons from Font Awesome.
-  
-  ![Screenshot of Footer Area](/assets/images/footer.png)
-
-- ### Future Ideas
-  - The option of playing a few different crosswords, perhaps toggling between easy, medium and hard.
-  - Best of scoreboard offering user to enter name at start of game.
         
 ## Design
   - Courier New was chosen for header font style as this I believe evokes a sense of classic old newspapper.
@@ -70,7 +60,6 @@ This is project module 3 of Code Institute Full Stack Developer course, focusing
 ## Game Logic
   - ### Flowchart
   ![Flowchart image](/assets/images/flowchart.png)
-
 
 ## Technologies Used
   ### Languages
@@ -103,11 +92,6 @@ Manual testing was carried out for character input and win conditions:
   | Draw condition where all slots are occupied however where none of the win conditions were triggered. |   Draw condition triggered presenting a draw message and offered to play again.   |       Works as expected.              |     Pass |
   
 
-
-
-
-
-
 ## Validation
 
 ### HTML Validation
@@ -121,18 +105,6 @@ Manual testing was carried out for character input and win conditions:
 
 </details>
 
-### CSS Validation
-
-- [W3 CSS Checker](https://jigsaw.w3.org/css-validator/) was used to test CSS validation. The website passed as per below screenshot.
-
-<details>
-
-<summary>CSS Checker for style.css</summary>
-
-![W3 CSS Checker result for style.css](/assets/images/css_validation.png)
-
-</details>
-
 ### JavaScript Validation
 JavaScript validation was performed using [JSHint](https://jshint.com/) and the following results were returned:
  - No errors were found.
@@ -140,30 +112,6 @@ JavaScript validation was performed using [JSHint](https://jshint.com/) and the 
  - The function with the largest signature takes 2 arguments, while the median is 0.
  - There are 92 statements in the largest function, while the median is 2.
  - The most complex function has a cyclomatic complexity value of 46, while the median is 1.
-
-## Performance/Accessibility 
-
-Google Chrome Developer Tools Lighthouse feature was used to test Performance and Accessibility. 
-For both desktop and mobile versions of Lighthouse a score over 90% were achieved for all metrics. 
-
-
-### Lighthouse Desktop version test outcome
-
-<details>
-<summary>Desktop Performance</summary>
-
-![Chrome Dev Tools Lighthouse output](/assets/images/desktop_performance.png)
-
-</details>
-
-### Lighthouse Mobile version test outcome
-
-<details>
-<summary>Mobile Performance</summary>
-
-![Chrome Dev Tools Lighthouse output](/assets/images/mobile_performance.png)
-
-</details>
 
 
 ## Deployment
@@ -178,11 +126,6 @@ For both desktop and mobile versions of Lighthouse a score over 90% were achieve
 
 
 ## Credits
-
-### Images
-
-Hero image aquired from [Pexels](#pexels.com):
- - crossword2.jpg (original name: pexels-brett-jordan-5908695.jpg) - by Brett Jordan
 
 
 ### Code
