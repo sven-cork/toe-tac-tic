@@ -1,7 +1,6 @@
 import random
 import sys
 import time
-import curses
 from os import system, name
 from time import sleep
 from termcolor import colored
@@ -10,12 +9,6 @@ computer_score = 0
 player_score = 0
 player = ""
 computer = ""
-
-# print("""
-# Beat the computer in classic Tic-Tac-Toe.
-
-# Choose side and score three in a row for a win.
-# """)
 
 game_board = ["-", "-", "-",
               "-", "-", "-",
@@ -46,7 +39,7 @@ def select_player():
     player = ""
     while True:
         print("\n")
-        player = input("\nPlayer select team 'X' or 'O': \n").upper()
+        player = input("\nPlayer select team 'X' or 'O':\n").upper()
         if player == "X" or player == "O":
             break
         else:
@@ -102,7 +95,6 @@ def display_board(game_board):
     print(colored("+---+---+---+", "red"))
 
 
-# Select slot on board and update board
 def user_input(game_board):
     """
     User selects slot to place X or O. Checks if slot already taken and if so
@@ -114,7 +106,7 @@ def user_input(game_board):
         print("\n")
 
         try:
-            user_input = int(input("Select a slot (1-9) on the gameboard: \n"))
+            user_input = int(input("Select a slot (1-9) on the gameboard:\n"))
             if (user_input >= 1 and user_input <= 9 and
                (game_board[user_input - 1] == "-")):
                 game_board[user_input - 1] = player
@@ -165,6 +157,8 @@ def check_winner(game_board):
     Checks winner if three of the same characters (X or O) have been
     selected either horizontaly, vertically or diagonaly
     """
+
+    display_board(game_board)
 
     new_line = '\n'
     winner_message = colored("is the winner!!", "yellow")
@@ -261,11 +255,11 @@ def play_again():
 
     while True:
         play_again_selection = input("\nWould you like to \
-continue, yes or no (y/n): \n").upper()
+continue, 'Yes' or 'No' (Y/N):\n").upper()
         if play_again_selection == "Y" or play_again_selection == "N":
             break
         else:
-            print("Enter valid string 'y' or 'n'")
+            print(colored("Enter valid string 'Y' or 'N'", "red"))
 
     if play_again_selection == "Y":
 
@@ -283,7 +277,8 @@ continue, yes or no (y/n): \n").upper()
         print("\n")
         sleep(0.5)
         screen_cleared()
-        typewriter_effect(colored("\nGoodbye Player...\n", "cyan"))
+        typewriter_effect(colored("Goodbye Player...\n", "cyan"))
+        print("\n")
         quit()
 
 
@@ -296,7 +291,6 @@ def main():
     while run_game:
         display_board(game_board)
         user_input(game_board)
-        # display_board(game_board)
         sleep(0.5)
         screen_cleared()
         check_winner(game_board)

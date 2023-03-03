@@ -16,14 +16,20 @@ This is project module 3 of Code Institute Full Stack Developer course, focusing
     - [Exit game](#exit-game)
 
 - [User stories](#user-stories)
-- [colorscheme](#colorscheme)
+- [Colorscheme](#colorscheme)
 - [Game Logic/Flowchart](#game-logic/flowchart)
-- [Technologies Used](#technologies-utilised)
+- [Technologies Used](#technologies-used)
+  - [Languages](#languages)
+  - [Modules](#modules)
+- [Development Environment, Version Control and Deployment/Storage](#custom-names)
 - [Testing](#testing)
 - [Validation](#validation)
   - [PEP8](#pep8)
 - [Deployment](#deployment)
-  - [Forking](#forking)
+  - [Forking with GitHub](#forking-with-github)
+  - [Cloning with GitHub](#cloning-with-github)
+  - [Deploying with Heroku](#deploying-with-heroku)
+- [Future implementations](#future-implementations)
 - [Credits](#credits)
 
 ## UI/UX
@@ -44,12 +50,16 @@ This is project module 3 of Code Institute Full Stack Developer course, focusing
 
   - #### Results
     - Upon scoring three characters in a row the winner character is displayed.
+  
+  ![Screenshot of winning condition](/assets/images/winner_streak.png) 
+
     - Game score is displayed below with the total score for player and computer
-      from starting the first game
+      from starting the first game.
 
   ![Screenshot of results area](/assets/images/results.png) 
  
   - #### Play again
+
     - Upon scoring a win the player is presented with an option to continue the game (y/n).
 
   ![Screenshot of option to continue game](/assets/images/continue_game.png)
@@ -85,11 +95,14 @@ This is project module 3 of Code Institute Full Stack Developer course, focusing
   ### Languages
   - Toe Tac Tic was written in Python.
 
-  ### Packages
+  ### Modules
   - [Termcolor:](https://pypi.org/project/termcolor/) was used to color the gameboard.
   - [Random:](https://docs.python.org/3/library/random.html) was used to generate random number for computer.
-
-  ### Development Environment, Version Control and Deployment/Storage
+  - [Time](https://docs.python.org/3/library/time.html) was used to pause the Terminal before clearing the window.
+  - [Sys](https://docs.python.org/3/library/sys.html) was used to enable a typewriter effect printing intro/exit message in Terminal.
+  - [Os](https://docs.python.org/3/library/os.html) two modules were imported ("system and "name") and used to enable a typewriter effect printing intro/exit message in Terminal.
+ 
+  ### <a name="custom-names"></a>Development Environment, Version Control and Deployment/Storage
 
   - [Gitpod:](https://gitpod.io/workspaces) - was used for writing the game code and deploy to GitHub
   - [GitHub:](https://github.com/) - was used for hosting the program source code and supporting files
@@ -120,7 +133,7 @@ Manual testing was carried out for character input and win conditions:
 
 ## Deployment
 
-### Forking
+### Forking with GitHub
 1. Open [GitHub](https://github.com).
 2. Navigate to the intended repository.
 3. Select "Fork" in the top rigth corner of the page.
@@ -128,16 +141,29 @@ Manual testing was carried out for character input and win conditions:
 5. Select the "Create Fork" button.
 6. Your copy of the original repository has been created.
 
+### Cloning with GitHub
+1. Open [GitHub](https://github.com).
+2. Navigate to the intended repository.
+3. Select the "Code" button on the top of the repository page.
+4. Select the copy button for one of the three options: "HTTPS", "SSH" or "GitHub CLI".
+5. Open Terminal (or command line tool) on your local computer.
+6. In Terminal change the current working directory to the directory where the clone will reside.
+7. In Terminal type: "git clone" followed by a space. Paste the URL copied in (step 4.).
+8. In Terminal press "Enter"/"Return" to create a local copy of the repository on your computer.
+
+### Deploying with Heroku
+
+## Future implementations
+- To control the position of the game in the Terminal window I am exploring curses with Python.
 
 ## Credits
-
 
 ### Code
 - Inspiration for gameboard design was taken from [Code Coach](https://www.youtube.com/watch?v=dK6gJw4-NCo&list=PLzoTxk8WON8ZgLPBK9YYZlHoJzm0QUR8F&index=1&ab_channel=CodeCoach) YouTube channel.
 
 - Code to generate a typewriter effect was borrowed from this [Stackoverflow](https://stackoverflow.com/questions/20302331/typing-effect-in-python) thread.
 
-- Code to clear screen was borrowed from this [geeksforgeeks](https://www.geeksforgeeks.org/clear-screen-python/) article 
+- Code to clear screen was borrowed from this [geeksforgeeks](https://www.geeksforgeeks.org/clear-screen-python/) article. 
 
 
 ### Special thanks
