@@ -126,7 +126,7 @@ Manual testing was carried out for character input and win conditions:
 
 
 ### Code
-- Inspiration for design of the gameboard was taken from [Code Coach](https://www.youtube.com/watch?v=dK6gJw4-NCo&list=PLzoTxk8WON8ZgLPBK9YYZlHoJzm0QUR8F&index=1&ab_channel=CodeCoach).
+- Inspiration for gameboard design was taken from [Code Coach](https://www.youtube.com/watch?v=dK6gJw4-NCo&list=PLzoTxk8WON8ZgLPBK9YYZlHoJzm0QUR8F&index=1&ab_channel=CodeCoach) YouTube channel.
 
 
 ### Other

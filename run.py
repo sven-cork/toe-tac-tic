@@ -1,36 +1,63 @@
 import random
+import sys
+import time
 from termcolor import colored
 
 computer_score = 0
 player_score = 0
+player = ""
+computer = ""
 
-print("""
-Beat the computer in classic Tic-Tac-Toe.
 
-Choose side and score three in a row for a win.
-""")
+# print("""
+# Beat the computer in classic Tic-Tac-Toe.
+
+# Choose side and score three in a row for a win.
+# """)
 
 game_board = ["-", "-", "-",
-              "-", "-", "-",
-              "-", "-", "-"]
+             "-", "-", "-",
+             "-", "-", "-"]
 
-player = ""
-while True:
-    player = input("\nPlayer select team 'X' or 'O': \n").upper()
-    if player == "X" or player == "O":
-        break
+
+def select_player():
+    """
+    Allows player to select team character 'X' or 'O'.
+    """
+    global player
+    global computer
+
+    player = ""
+    while True:
+        player = input("\nPlayer select team 'X' or 'O': \n").upper()
+        if player == "X" or player == "O":
+            break
+        else:
+            print("\nIncorrect option, select either 'X' or 'O'.")
+
+    computer = ""
+    if player == "X":
+        computer = "O"
     else:
-        print("\nIncorrect option, select either 'X' or 'O'.")
+        computer = "X"
 
-computer = ""
-if player == "X":
-    computer = "O"
-else:
-    computer = "X"
+
+def typewriter_effect(string):
+    """
+    Typewriter effect (each character delayed) for text printed to Terminal.
+    """
+
+    for character in string:
+        time.sleep(.1)
+        sys.stdout.write(character)
+        sys.stdout.flush()
 
 
 def display_board(game_board):
-    """Prints gameboard"""
+    """
+    Prints gameboard
+    """
+
     print("\n")
     print(colored("+---+---+---+", "red"))
     print(colored("| ", 'red') + game_board[0] + colored(" | ", "red")
@@ -223,6 +250,7 @@ continue, yes or no (y/n): \n").upper()
         print("\n")
         print("Player score: ", player_score,
               "\nComputer score:", computer_score)
+        typewriter_effect("\nGoodbye Player...")
         quit()
 
 
@@ -230,6 +258,7 @@ def main():
     """
     Game main function running all sub functions
     """
+
     run_game = True
     while run_game:
         display_board(game_board)
@@ -240,4 +269,10 @@ def main():
         check_winner(game_board)
 
 
+# intro_string = """Welcome to Toe-Tac-Tic. A Terminal based take on the classic
+                  # Tic-Tac-Toe game. Choose your character and hit those three
+                  # slots in a row to beat the computer."""
+
+typewriter_effect("Hello Cork")
+select_player()
 main()
