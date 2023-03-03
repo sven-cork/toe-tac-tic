@@ -1,13 +1,15 @@
 import random
 import sys
 import time
+import curses
+from os import system, name
+from time import sleep
 from termcolor import colored
 
 computer_score = 0
 player_score = 0
 player = ""
 computer = ""
-
 
 # print("""
 # Beat the computer in classic Tic-Tac-Toe.
@@ -16,8 +18,22 @@ computer = ""
 # """)
 
 game_board = ["-", "-", "-",
-             "-", "-", "-",
-             "-", "-", "-"]
+              "-", "-", "-",
+              "-", "-", "-"]
+
+game_logo = """
+            +---+---+---+
+            | X | - | - |
+            +---+---+---+
+            | - | X | - |
+            +---+---+---+
+            | O | - | O |
+            +---+---+---+
+            """
+
+intro_message = colored("""Welcome to Toe-Tac-Tic.
+Choose your character and hit those three slots in a row
+to beat the computer!!""", "cyan")
 
 
 def select_player():
@@ -29,6 +45,7 @@ def select_player():
 
     player = ""
     while True:
+        print("\n")
         player = input("\nPlayer select team 'X' or 'O': \n").upper()
         if player == "X" or player == "O":
             break
@@ -48,9 +65,20 @@ def typewriter_effect(string):
     """
 
     for character in string:
-        time.sleep(.1)
+        time.sleep(.08)
         sys.stdout.write(character)
         sys.stdout.flush()
+
+
+def screen_cleared():
+    """
+    Pauses and clears the screen after specified amount of seconds.
+    """
+
+    if name == 'nt':
+        _ = system('cls')
+    else:
+        _ = system('clear')
 
 
 def display_board(game_board):
@@ -84,6 +112,7 @@ def user_input(game_board):
     global player
     while True:
         print("\n")
+
         try:
             user_input = int(input("Select a slot (1-9) on the gameboard: \n"))
             if (user_input >= 1 and user_input <= 9 and
@@ -215,7 +244,6 @@ def computer_turn():
         if (game_board[random_number - 1] != "X"
                 and game_board[random_number - 1] != "O"):
             game_board[random_number - 1] = computer
-            print("computer selected: ", random_number)
             display_board(game_board)
             break
 
@@ -226,6 +254,8 @@ def play_again():
     and invalid letters.
     """
     global game_board
+    global player_score
+    global computer_score
 
     play_again_selection = ""
 
@@ -239,18 +269,21 @@ continue, yes or no (y/n): \n").upper()
 
     if play_again_selection == "Y":
 
+        sleep(0.5)
+        screen_cleared()
+
         game_board = ["-", "-", "-",
                       "-", "-", "-",
                       "-", "-", "-"]
-        print("\n", "Player score: ", player,
+        print("\nPlayer score: ", player_score,
               "\nComputer score:", computer_score)
         main()
 
     else:
         print("\n")
-        print("Player score: ", player_score,
-              "\nComputer score:", computer_score)
-        typewriter_effect("\nGoodbye Player...")
+        sleep(0.5)
+        screen_cleared()
+        typewriter_effect(colored("\nGoodbye Player...\n", "cyan"))
         quit()
 
 
@@ -263,16 +296,21 @@ def main():
     while run_game:
         display_board(game_board)
         user_input(game_board)
-        display_board(game_board)
+        # display_board(game_board)
+        sleep(0.5)
+        screen_cleared()
         check_winner(game_board)
+        sleep(0.5)
+        screen_cleared()
         computer_turn()
         check_winner(game_board)
+        sleep(0.5)
+        screen_cleared()
 
 
-# intro_string = """Welcome to Toe-Tac-Tic. A Terminal based take on the classic
-                  # Tic-Tac-Toe game. Choose your character and hit those three
-                  # slots in a row to beat the computer."""
-
-typewriter_effect("Hello Cork")
+print(game_logo)
+typewriter_effect(intro_message)
 select_player()
+sleep(1)
+screen_cleared()
 main()

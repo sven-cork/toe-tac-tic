@@ -13,6 +13,7 @@ This is project module 3 of Code Institute Full Stack Developer course, focusing
     - [Gameboard](#gameboard)
     - [Results](#results)
     - [Play again](#play-again)
+    - [Exit game](#exit-game)
 
 - [User stories](#user-stories)
 - [colorscheme](#colorscheme)
@@ -31,7 +32,7 @@ This is project module 3 of Code Institute Full Stack Developer course, focusing
   - #### Logo With Start Screen
     - Upon starting the game the user is greeted with a game board picture and the start screen as below:
 
-    ![Screenshot of Le Crossword heading](/assets/images/crossword_heading.png) 
+    ![Screenshot of start screen](/assets/images/welcome.png) 
 
   - #### Gameboard
     - 9 slots, initially empty.
@@ -52,6 +53,12 @@ This is project module 3 of Code Institute Full Stack Developer course, focusing
     - Upon scoring a win the player is presented with an option to continue the game (y/n).
 
   ![Screenshot of option to continue game](/assets/images/continue_game.png)
+
+  - #### Exit game
+    - Player select 'n' to exit game.
+
+  ![Screenshot exiting game](/assets/images/goodbye.png)
+
 
 - ### User Stories
   - I would like a new visitor to experience or achive:
@@ -127,6 +134,8 @@ Manual testing was carried out for character input and win conditions:
 
 ### Code
 - Inspiration for gameboard design was taken from [Code Coach](https://www.youtube.com/watch?v=dK6gJw4-NCo&list=PLzoTxk8WON8ZgLPBK9YYZlHoJzm0QUR8F&index=1&ab_channel=CodeCoach) YouTube channel.
+
+- Code to generate a typewriter effect was borrowed from this [Stackoverflow](https://stackoverflow.com/questions/20302331/typing-effect-in-python) thread.
 
 
 ### Other
