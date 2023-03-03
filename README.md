@@ -38,7 +38,7 @@ This is project module 3 of Code Institute Full Stack Developer course, focusing
   - #### Logo With Start Screen
     - Upon starting the game the user is greeted with a game board picture and the start screen as below:
 
-    ![Screenshot of start screen](/assets/images/welcome.png) 
+  ![Screenshot of start screen](/assets/images/welcome.png) 
 
   - #### Gameboard
     - 9 slots, initially empty.
@@ -152,6 +152,21 @@ Manual testing was carried out for character input and win conditions:
 8. In Terminal press "Enter"/"Return" to create a local copy of the repository on your computer.
 
 ### Deploying with Heroku
+1. From your GitPod workspace, copy the entire content of creds.json file. This will be needed in step 6.
+2. Create an account with [Heroku](https://heroku.com) and sign in.
+3. Open Heroku Dashboard and select "Create a new app" button.
+4. Give the app a unique name and select "Create app".
+5. To apply settings select the "Settings" button.
+6. Select "Reveal Config Vars".
+7. In the "Keys" field enter "CREDS".
+8. In the "Value" field paste the content of creds.json (step 1.). Select "Add".
+9. In the second "Value" field enter "PORT". In the corresponding "Value" field enter "8000".
+7. From the "Buildpacks" section select "Add buildpack". Add python and nodejs and ensure the resulting order
+is listed 'heroku/python' followed by 'heroku/nodejs'. 
+8. From the 'Deployment' tab select "GitHub" in the "Deployment method" section. Select "Connect to GitHub" at the bottom of the page.
+9. In the search field search for your GitHub repository name.
+10. Select "Connect" to link up with the GitHub repository.
+11. Further down the page select deployment method automatic ("Enable Automatic Deploys") or manual ("Deploy branch").
 
 ## Future implementations
 - To control the position of the game in the Terminal window I am exploring curses with Python.

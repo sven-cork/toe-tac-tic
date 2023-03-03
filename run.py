@@ -36,6 +36,8 @@ def select_player():
     global player
     global computer
 
+    warning_message = "Incorrect option, select either 'X' or 'O'"
+
     player = ""
     while True:
         print("\n")
@@ -43,7 +45,7 @@ def select_player():
         if player == "X" or player == "O":
             break
         else:
-            print("\nIncorrect option, select either 'X' or 'O'.")
+            print(colored(warning_message, "red"))
 
     computer = ""
     if player == "X":
