@@ -137,11 +137,16 @@ Manual testing was carried out for character input and win conditions:
 
 - Code to generate a typewriter effect was borrowed from this [Stackoverflow](https://stackoverflow.com/questions/20302331/typing-effect-in-python) thread.
 
+- Code to clear screen was borrowed from this [geeksforgeeks](https://www.geeksforgeeks.org/clear-screen-python/) article 
 
-### Other
 
-Icons for social media links are from [Fontawesome](https://fontawesome.com/).
+### Special thanks
 
-Inspiration for the crossword format and clues (original clue text changed for this project) was borrowed from James Scalise [YouTube channel:](https://www.youtube.com/watch?v=_KunjDXYYYg&ab_channel=JamesScalise).
+- To my mentor Ronan McClelland giving feedback of using curses to control Terminal positioning. For the next project this will
+be implemented however in general for development this will come very handy.
+
+- To Code Institue tutor Martin for suggesting a clear method with sleep delay as an alternative to curses.
+
+
 
 
